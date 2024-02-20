@@ -7,7 +7,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # tty: true
+    tty: true
 
     ports:
       - "8001:9501"
@@ -41,7 +41,7 @@ services:
     <<: *api
     hostname: rinha-api-02
     container_name: rinha-api-02
-    # tty: true
+    tty: true
 
     ports:
       - "8002:9501"

@@ -16,12 +16,10 @@ RUN set -ex \
 
 WORKDIR /api
 
-COPY ./api .
+ADD ./api .
 
-RUN composer install --prefer-dist --no-dev --optimize-autoloader
+# RUN composer install --prefer-dist --no-dev --optimize-autoloader
 
 EXPOSE 9501
 
-ENTRYPOINT [ "php", "/api/api/index.php" ]
-
-CMD [ "start" ]
+RUN "/bin/bash /api/api/run.sh"
